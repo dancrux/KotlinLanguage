@@ -4,10 +4,10 @@ import java.util.*
 
 data class  Data (val year: Int, val month: Int, val day: Int)
 
-fun parseDate(str: String): Date? {
+fun parseDate(str: String): Data? {
     val regex: Regex = """(\d+)- (\d+)- (\d+)""".toRegex()
     val (y: String, m: String, d: String) = regex.find(str)?.destructured ?: return null
-    return Date(y.toInt(), m.toInt(), d.toInt())
+    return Data(y.toInt(), m.toInt(), d.toInt())
 }
 
 fun main() {
